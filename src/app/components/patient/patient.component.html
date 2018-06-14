@@ -1,0 +1,24 @@
+<!-- {{ getAges() }} -->
+
+<mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="avatar"></div>
+      <mat-card-title>{{ patient.name }} {{ patient.surname }}</mat-card-title>
+      <mat-card-subtitle>{{ patient.birthdate | date }} ({{ age }} ages)</mat-card-subtitle>
+    </mat-card-header>
+
+    <img *ngIf="patient.photo"
+         mat-card-image class="photo-patient"
+         src="{{ patient.photo }}" alt="Patient photo">
+    <img *ngIf="!patient.photo"
+         mat-card-image class="photo-patient"
+         src="assets/no-photo.jpg" alt="Patient photo">
+    <mat-card-content>
+      <p class="text-capitalize">{{ patient.gender}}</p>
+      <p class="text-capitalize">{{ patient.priority }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="onUpdate()">UPDATE</button>
+      <button mat-button (click)="onDelete()">DELETE</button>
+    </mat-card-actions>
+  </mat-card>

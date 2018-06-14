@@ -1,0 +1,9 @@
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.avatar {
+    background-image: url('/assets/avatar.jpg');
+    background-size: cover;
+  }
